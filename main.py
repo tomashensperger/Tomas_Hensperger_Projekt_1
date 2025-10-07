@@ -1,7 +1,6 @@
 print("Projekt 1: Textový anlyzátor")
 print("Autor: Tomáš Hensperger")
-#neco jsem pridal kvuli git
-print("zkousim git")
+
 TEXTS = [
     '''Situated about 10 miles west of Kemmerer,
     Fossil Butte is a ruggedly impressive
