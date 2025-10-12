@@ -36,7 +36,7 @@ users = {"bob" : "123", "ann" : "pass123", "mike" : "password123", "liz" : "pass
 
 texts_max = len(TEXTS)
 choice = None
-choice_wordlist = []
+words = []
 
 if password in users[username]: #kontrola uzivatele a spravneho hesla
     print("-" * 40)
@@ -55,26 +55,25 @@ if password in users[username]: #kontrola uzivatele a spravneho hesla
         print("-" * 40)
         print(TEXTS[int(choice)-1])
         print("-" * 40)
-        choice_wordlist = TEXTS[int(choice)-1].split()
-        slova = list(text.split())
-        print(slova)
+        words = TEXTS[int(choice)-1].split()
+        print(words)
 
 
-        pocet_slov = 0
-        nazvy_slov = 0
-        velke_pismena = 0
-        male_pismena = 0
+        word_counter = 0
+        word_names = 0
+        big_letters = 0
+        small_letters = 0
         pocet_cisel = 0
         soucet_cisel = 0
 
-        for slovo in slova:
-            pocet_slov += 1 
+        for word in words:
+            word_counter += 1 
             if slovo.istitle():
-                nazvy += 1
+                word_names += 1
             elif slovo.isupper():
-                velke += 1
+                big_letters += 1
             elif slovo.islower():
-                male += 1
+                small_letters += 1
             elif slovo.isdigit():
                 pocet_cisel += 1
                 soucet_cisel += int(slovo)
@@ -82,12 +81,12 @@ if password in users[username]: #kontrola uzivatele a spravneho hesla
 
 
         print("---" * 40)
-        print(f"pocet slov: {pocet_slov}")
-        print(f"pocet slov zacinajicich velkym pismenenm: {nazvy}")
-        print(f"pocet velkych: {velke}")
-        print(f"pocet malych: {male}")
+        print(f"pocet slov: {word_counter}")
+        print(f"pocet slov zacinajicich velkym pismenenm: {word_names}")
+        print(f"pocet velkych: {big_letters}")
+        print(f"pocet malych: {small_letters}")
         print(f"pocet cisel: {pocet_cisel}")
-        print(f"soucet: {soucet}")
+        print(f"soucet: {soucet_cisel}")
 
 else:
     print("Unregistered user, terminating the program...")
