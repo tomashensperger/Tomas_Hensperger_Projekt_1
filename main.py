@@ -51,42 +51,37 @@ if password in users[username]: #kontrola uzivatele a spravneho hesla
         print("Selected text does not exist (out of range). Terminating the program...")
         exit()
     else:
-        
-        print("-" * 40)
-        print(TEXTS[int(choice)-1])
         print("-" * 40)
         words = TEXTS[int(choice)-1].split()
-        print(words)
-
-
         word_counter = 0
-        word_names = 0
-        big_letters = 0
-        small_letters = 0
-        pocet_cisel = 0
-        soucet_cisel = 0
+        titlecase = 0
+        uppercase = 0
+        lowercase = 0
+        numeric = 0
+        num_sum = 0
 
         for word in words:
             word_counter += 1 
-            if slovo.istitle():
-                word_names += 1
-            elif slovo.isupper():
-                big_letters += 1
-            elif slovo.islower():
-                small_letters += 1
-            elif slovo.isdigit():
-                pocet_cisel += 1
-                soucet_cisel += int(slovo)
-
-
+            if word.istitle():
+                titlecase += 1
+            elif word.isupper():
+                uppercase += 1
+            elif word.islower():
+                lowercase += 1
+            elif word.isdigit():
+                numeric += 1
+                num_sum += int(word)
 
         print("---" * 40)
-        print(f"pocet slov: {word_counter}")
-        print(f"pocet slov zacinajicich velkym pismenenm: {word_names}")
-        print(f"pocet velkych: {big_letters}")
-        print(f"pocet malych: {small_letters}")
-        print(f"pocet cisel: {pocet_cisel}")
-        print(f"soucet: {soucet_cisel}")
+        print(f"There are {word_counter} words in the selected text.")
+        print(f"There are {titlecase} titlecase words.")
+        print(f"There are {uppercase} uppercase words.")
+        print(f"There are {lowercase} lowercase words.")
+        print(f"There are {numeric} numeric strings")
+        print(f"The sum of all the numbers {num_sum}")
+        print("---" * 40)
+        print("LEN| \t OCCURRENCES \t |NR.")
+        print("---" * 40)
 
 else:
     print("Unregistered user, terminating the program...")
