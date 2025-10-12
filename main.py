@@ -51,15 +51,14 @@ if password in users[username]: #kontrola uzivatele a spravneho hesla
         print("Selected text does not exist (out of range). Terminating the program...")
         exit()
     else:
-        print("-" * 40)
-        words = TEXTS[int(choice)-1].split()
+        words = TEXTS[int(choice)-1].split()    #pocitadla sol
         word_counter = 0
         titlecase = 0
         uppercase = 0
         lowercase = 0
         numeric = 0
         num_sum = 0
-
+        
         for word in words:
             word_counter += 1 
             if word.istitle():
@@ -72,16 +71,24 @@ if password in users[username]: #kontrola uzivatele a spravneho hesla
                 numeric += 1
                 num_sum += int(word)
 
-        print("---" * 40)
+        print("-" * 40)
         print(f"There are {word_counter} words in the selected text.")
         print(f"There are {titlecase} titlecase words.")
         print(f"There are {uppercase} uppercase words.")
         print(f"There are {lowercase} lowercase words.")
         print(f"There are {numeric} numeric strings")
         print(f"The sum of all the numbers {num_sum}")
-        print("---" * 40)
+        print("-" * 40)
         print("LEN| \t OCCURRENCES \t |NR.")
-        print("---" * 40)
+        print("-" * 40)
+
+        delka_slov = {}
+        
+        for word in words: #graf podle vyskytu slov podle delky slov
+            print(f"")
+
+            #print(f"{column}|{int(graf[column])*"*"} + \t + | + {graf[column]}")
+            #print("-" * 40)
 
 else:
     print("Unregistered user, terminating the program...")
