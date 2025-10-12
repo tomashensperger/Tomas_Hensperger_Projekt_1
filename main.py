@@ -56,14 +56,38 @@ if password in users[username]: #kontrola uzivatele a spravneho hesla
         print(TEXTS[int(choice)-1])
         print("-" * 40)
         choice_wordlist = TEXTS[int(choice)-1].split()
-        print(choice_wordlist)
-        print("pocet slov: ", len(choice_wordlist))
-        print("Pocet slov zacinajici velkym pismenem: ")
-        print("pocet slov psanych VELKYMI pismeny: ")
-        print("pocet slov psanych malymi pismeny: ")
-        print("pocet cisel: ",)
-        print("Soucet vsech cisel:")
-        print("graf:")
+        slova = list(text.split())
+        print(slova)
+
+
+        pocet_slov = 0
+        nazvy_slov = 0
+        velke_pismena = 0
+        male_pismena = 0
+        pocet_cisel = 0
+        soucet_cisel = 0
+
+        for slovo in slova:
+            pocet_slov += 1 
+            if slovo.istitle():
+                nazvy += 1
+            elif slovo.isupper():
+                velke += 1
+            elif slovo.islower():
+                male += 1
+            elif slovo.isdigit():
+                pocet_cisel += 1
+                soucet_cisel += int(slovo)
+
+
+
+        print("---" * 40)
+        print(f"pocet slov: {pocet_slov}")
+        print(f"pocet slov zacinajicich velkym pismenenm: {nazvy}")
+        print(f"pocet velkych: {velke}")
+        print(f"pocet malych: {male}")
+        print(f"pocet cisel: {pocet_cisel}")
+        print(f"soucet: {soucet}")
 
 else:
     print("Unregistered user, terminating the program...")
